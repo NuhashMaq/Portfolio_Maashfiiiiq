@@ -18,11 +18,18 @@ Create a file called `.env.local` in your project root with this content:
 # Groq API Configuration
 GROQ_API_KEY=your_actual_groq_api_key_here
 
+# TMDB API for movie game mode
+TMDB_API_KEY=your_tmdb_api_key_here
+
+# GitHub stats integration
+GITHUB_REPO=NuhashMaq/Portfolio_Maashfiiiiq
+GITHUB_TOKEN=your_optional_github_token
+
 # Environment
 NODE_ENV=development
 ```
 
-**Replace `your_actual_groq_api_key_here` with your real Groq API key.**
+**Replace placeholder values with your real API keys before running the app.**
 
 ## 🎯 **Step 3: Test Locally**
 
@@ -40,7 +47,8 @@ Visit `http://localhost:3000` to test your portfolio.
 2. **Connect to Vercel**:
    - Go to [vercel.com](https://vercel.com)
    - Import your GitHub repository
-   - Add environment variable: `GROQ_API_KEY` with your API key
+   - Set Node.js version to `20.x`
+   - Add environment variables: `GROQ_API_KEY`, `TMDB_API_KEY`, `GITHUB_REPO`, and optional `GITHUB_TOKEN`
 3. **Deploy!**
 
 ## ✅ **What's Included:**
