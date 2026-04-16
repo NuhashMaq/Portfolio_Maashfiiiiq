@@ -13,7 +13,6 @@ const groq = createGroq({
 const MAX_MESSAGE_PAIRS = 4;
 const MAX_CONTENT_CHARS = 700;
 
-// ❌ Pas besoin de l'export ici, Next.js n'aime pas ça
 function errorHandler(error: unknown) {
   const rawMessage =
     typeof error === 'string'
@@ -129,8 +128,6 @@ export async function POST(req: Request) {
     const messages = Array.isArray(requestBody?.messages)
       ? requestBody.messages
       : [];
-
-    console.log('[CHAT-API] Incoming messages:', messages);
 
     const fallbackMessages = normalizeMessages(messages);
 
