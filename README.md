@@ -206,8 +206,8 @@ curl http://localhost:3000/api/health
 1. Clone repository
 
 ```bash
-git clone https://github.com/NuhashMaq/AI_PORTFOLIO.git
-cd AI_PORTFOLIO/ai-native-portfolio
+git clone https://github.com/NuhashMaq/Portfolio_Maashfiiiiq.git
+cd Portfolio_Maashfiiiiq
 ```
 
 2. Install dependencies
@@ -222,7 +222,7 @@ pnpm install
 GROQ_API_KEY=your_groq_api_key
 TMDB_API_KEY=your_tmdb_api_key
 GITHUB_TOKEN=your_github_token_optional
-GITHUB_REPO=NuhashMaq/AI_PORTFOLIO
+GITHUB_REPO=NuhashMaq/Portfolio_Maashfiiiiq
 ```
 
 4. Run
