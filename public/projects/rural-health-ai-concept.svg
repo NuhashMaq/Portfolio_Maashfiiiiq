@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Rural health assistant AI concept image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="45%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#365314"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif">
+    <text x="120" y="128" font-size="52" font-weight="700">Smart Rural Health Assistant</text>
+    <text x="120" y="176" font-size="28" opacity="0.85">Bilingual AI triage for underserved communities</text>
+  </g>
+  <g>
+    <rect x="120" y="220" width="560" height="520" rx="28" fill="#166534" fill-opacity="0.55" stroke="#86efac" stroke-opacity="0.7"/>
+    <circle cx="400" cy="420" r="120" fill="#dcfce7" fill-opacity="0.2"/>
+    <circle cx="400" cy="420" r="72" fill="#bbf7d0" fill-opacity="0.25"/>
+    <path d="M384 370 h32 v36 h36 v28 h-36 v36 h-32 v-36 h-36 v-28 h36z" fill="#86efac"/>
+  </g>
+  <g>
+    <rect x="760" y="260" width="700" height="420" rx="24" fill="#022c22" fill-opacity="0.55" stroke="#86efac" stroke-opacity="0.65"/>
+    <g fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="30">
+      <text x="820" y="340">Symptom input</text>
+      <text x="820" y="410">Disease probability</text>
+      <text x="820" y="480">Severity triage</text>
+      <text x="820" y="550">Care recommendation</text>
+    </g>
+  </g>
+</svg>
