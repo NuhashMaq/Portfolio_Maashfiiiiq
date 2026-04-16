@@ -70,8 +70,9 @@ Visit `http://localhost:3000` to test your portfolio.
 ## 📈 **Monitoring Checklist:**
 
 1. Open `http://localhost:3000/api/health` and verify `status: ok`
-2. Add production health check in your uptime monitor of choice
-3. Keep `GROQ_API_KEY` and monitoring secrets only in environment settings
+2. Run `pnpm health:check` to validate endpoint availability from script
+3. Add production health check in your uptime monitor of choice
+4. Keep `GROQ_API_KEY` and monitoring secrets only in environment settings
 
 ## 🔧 **Troubleshooting:**
 
