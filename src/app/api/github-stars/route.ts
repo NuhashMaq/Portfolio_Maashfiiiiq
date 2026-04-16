@@ -1,26 +1,52 @@
-export async function GET(req: Request) {
+export async function GET() {
   const repo = process.env.GITHUB_REPO || 'vercel/next.js';
   const token = process.env.GITHUB_TOKEN;
+  const repoUrl = `https://api.github.com/repos/${repo}`;
+
+  const baseHeaders = {
+    Accept: 'application/vnd.github+json',
+    'User-Agent': 'portfolio-maashfiiiiq',
+  };
 
   const withTokenHeaders = token
     ? {
+        ...baseHeaders,
         Authorization: `Bearer ${token}`,
       }
-    : undefined;
+    : baseHeaders;
 
-  let res = await fetch(`https://api.github.com/repos/${repo}`, {
+  let res = await fetch(repoUrl, {
     headers: withTokenHeaders,
+    next: { revalidate: 300 },
   });
 
   // Retry anonymously if token is invalid or expired.
   if (res.status === 401 && token) {
-    res = await fetch(`https://api.github.com/repos/${repo}`);
+    res = await fetch(repoUrl, {
+      headers: baseHeaders,
+      next: { revalidate: 300 },
+    });
   }
 
   if (!res.ok) {
-    return new Response('Failed to fetch stars', { status: res.status });
+    return Response.json(
+      { stars: 0, error: 'Failed to fetch stars' },
+      {
+        status: res.status,
+        headers: {
+          'Cache-Control': 'no-store, max-age=0',
+        },
+      }
+    );
   }
 
-  const data = await res.json();
-  return Response.json({ stars: data.stargazers_count });
+  const data: { stargazers_count?: number } = await res.json();
+  return Response.json(
+    { stars: typeof data.stargazers_count === 'number' ? data.stargazers_count : 0 },
+    {
+      headers: {
+        'Cache-Control': 's-maxage=300, stale-while-revalidate=600',
+      },
+    }
+  );
 }
