@@ -201,6 +201,13 @@ Quick check:
 curl http://localhost:3000/api/health
 ```
 
+### Vercel Environment Checklist
+
+- `GROQ_API_KEY` set in Production/Preview/Development
+- `TMDB_API_KEY` set in Production/Preview/Development
+- `GITHUB_REPO` set to `NuhashMaq/Portfolio_Maashfiiiiq`
+- Optional `GITHUB_TOKEN` configured to reduce GitHub API rate limits
+
 ## Local Development
 
 1. Clone repository
